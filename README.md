@@ -1,5 +1,5 @@
-# GridWorld Nutrient Search with QLearning
-This repository hosts the code for a GridWorld nutrient search game, designed to illustrate the application of QLearning, a reinforcement learning technique. The structure of the program is as follows:
+# GridWorld Nutrient Search with Q-Learning
+This repository hosts the code for a GridWorld nutrient search game, designed to illustrate the application of Q-learning, a reinforcement learning technique. The structure of the program is as follows:
 
 - Initialize the Environment (GridWorld class): The game environment is initialized with a grid size of 100 x 100px and a nutrient source placed at its very center. The initialization also includes setting a nutrient gradient, which is used to create a more complex landscape for the agent to navigate.
 - Agent Definition (Agent class): The agent within this game occupies a single pixel in the grid and is capable of moving in four directions with a pace of one pixel per round. It is initialized at a random position within the grid. The agent's actions are determined either randomly (exploration) or by making use of a Q-table (exploitation).

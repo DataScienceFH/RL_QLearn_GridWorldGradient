@@ -1,15 +1,11 @@
-# GridWorld Nutrient Search with Q-Learning
+# GridWorld Nutrient Search with QLearning
 This repository hosts the code for a GridWorld nutrient search game, designed to illustrate the application of QLearning, a reinforcement learning technique. The structure of the program is as follows:
 
-    Initialize the Environment (GridWorld class): The game environment is initialized with a grid size of 100 x 100px and a nutrient source placed at its very center. The initialization also includes setting a nutrient gradient, which is used to create a more complex landscape for the agent to navigate.
-
-    Agent Definition (Agent class): The agent within this game occupies a single pixel in the grid and is capable of moving in four directions with a pace of one pixel per round. It is initialized at a random position within the grid. The agent's actions are determined either randomly (exploration) or by making use of a Q-table (exploitation).
-
-    Feedback Mechanism (via step method in GridWorld class): Feedback to the agent is provided through rewards based on the Manhattan distance to the nutrient source, incentivizing the agent to find the shortest path to the nutrient source.
-
-    QLearning Update (within the main training loop): The Q-table is updated after each action taken by the agent, factoring in the current state, action, reward, subsequent state, learning rate (alpha), and discount factor (gamma). This method forms the core of the agent's learning process.
-
-    Reward Function (calculate_reward function): The reward function allocates numerical rewards or penalties to the agent. It favors actions that reduce the distance to the nutrient source and penalizes those that do not, with a substantial reward being given when the agent finds the source.
+- Initialize the Environment (GridWorld class): The game environment is initialized with a grid size of 100 x 100px and a nutrient source placed at its very center. The initialization also includes setting a nutrient gradient, which is used to create a more complex landscape for the agent to navigate.
+- Agent Definition (Agent class): The agent within this game occupies a single pixel in the grid and is capable of moving in four directions with a pace of one pixel per round. It is initialized at a random position within the grid. The agent's actions are determined either randomly (exploration) or by making use of a Q-table (exploitation).
+- Feedback Mechanism (via step method in GridWorld class): Feedback to the agent is provided through rewards based on the Manhattan distance to the nutrient source, incentivizing the agent to find the shortest path to the nutrient source.
+- QLearning Update (within the main training loop): The Q-table is updated after each action taken by the agent, factoring in the current state, action, reward, subsequent state, learning rate (alpha), and discount factor (gamma). This method forms the core of the agent's learning process.
+- Reward Function (calculate_reward function): The reward function allocates numerical rewards or penalties to the agent. It favors actions that reduce the distance to the nutrient source and penalizes those that do not, with a substantial reward being given when the agent finds the source.
 
 The primary execution loop runs the agent's training for a designated number of episodes, during each of which the agent attempts to locate the nutrient source, limited by a maximum number of moves per episode. The agent follows an epsilon-greedy policy, which ensures a balance between exploration (choosing a random action) and exploitation (choosing the best-known action from the Q-table). The rate of exploration (epsilon) is set to decay over time, encouraging the agent to depend more on its learned experiences as it becomes more adept.
 
